@@ -1,0 +1,9 @@
+{
+  "name": "rustplus-mqtt",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "mqtt": "^5.5.0",
+    "rustplus-api": "^0.7.0"
+  }
+}

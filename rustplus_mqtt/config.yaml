@@ -1,0 +1,52 @@
+name: Rust+ MQTT Bridge
+slug: rustplus_mqtt
+version: "0.1.0"
+description: Expose Rust+ devices to Home Assistant via MQTT Discovery
+arch: [amd64, aarch64, armv7]
+startup: services
+boot: auto
+init: false
+
+options:
+  mqtt:
+    host: core-mosquitto
+    port: 1883
+    username: ""
+    password: ""
+    discovery_prefix: homeassistant
+    base_topic: rustplus
+  rust:
+    server: "1.2.3.4"
+    port: 28082
+    steam_id: ""
+    player_token: ""
+  poll_seconds: 5
+  devices:
+    switches: []
+    alarms: []
+    cameras: []
+
+schema:
+  mqtt:
+    host: str
+    port: int
+    username: str?
+    password: str?
+    discovery_prefix: str
+    base_topic: str
+  rust:
+    server: str
+    port: int
+    steam_id: str
+    player_token: str
+  poll_seconds: int
+  devices:
+    switches:
+      - name: str
+        entity_id: int
+    alarms:
+      - name: str
+        entity_id: int
+    cameras:
+      - name: str
+        entity_id: int
