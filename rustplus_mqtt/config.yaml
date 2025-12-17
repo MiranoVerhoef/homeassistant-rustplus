@@ -1,11 +1,17 @@
 name: Rust+ MQTT Bridge
 slug: rustplus_mqtt
-version: "0.1.2"
-description: Expose Rust+ devices to Home Assistant via MQTT Discovery
+version: "0.2.0"
+description: Expose Rust+ devices to Home Assistant via MQTT Discovery (with pairing wizard UI)
 arch: [amd64, aarch64, armv7]
 startup: services
 boot: auto
 init: false
+
+# Ingress (web UI inside HA sidebar)
+ingress: true
+ingress_port: 8099
+panel_icon: mdi:gamepad-variant
+panel_title: Rust+
 
 options:
   mqtt:
@@ -15,16 +21,7 @@ options:
     password: ""
     discovery_prefix: homeassistant
     base_topic: rustplus
-  rust:
-    server: "1.2.3.4"
-    port: 28082
-    steam_id: ""
-    player_token: ""
   poll_seconds: 5
-  devices:
-    switches: []
-    alarms: []
-    cameras: []
 
 schema:
   mqtt:
@@ -34,19 +31,4 @@ schema:
     password: str?
     discovery_prefix: str
     base_topic: str
-  rust:
-    server: str
-    port: int
-    steam_id: str
-    player_token: str
   poll_seconds: int
-  devices:
-    switches:
-      - name: str
-        entity_id: int
-    alarms:
-      - name: str
-        entity_id: int
-    cameras:
-      - name: str
-        entity_id: int
