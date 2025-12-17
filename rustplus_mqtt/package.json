@@ -1,10 +1,9 @@
 {
   "name": "rustplus-mqtt",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "private": true,
-  "type": "module",
   "dependencies": {
     "mqtt": "^5.5.0",
-    "@rustmeta/rustplus-ts": "^1.0.3"
+    "@liamcottle/rustplus.js": "^2.5.0"
   }
 }

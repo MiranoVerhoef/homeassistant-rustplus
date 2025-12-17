@@ -3,8 +3,7 @@
 Exposes Rust+ smart devices (switches, alarms, cameras) to Home Assistant using MQTT Discovery.
 
 ## Status
-This repository contains a working Home Assistant add-on scaffold. The build uses a published Rust+ client library:
-`@rustmeta/rustplus-ts`.
+Working Home Assistant add-on scaffold. Uses the published npm package `@liamcottle/rustplus.js`.
 
 ## Installation
 1. Add this GitHub repository in **Settings → Add-ons → Add-on Store → Repositories**
