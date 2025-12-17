@@ -1,15 +1,17 @@
 # HomeAssistant Rust+ — Rust+ MQTT Bridge (Add-on)
 
-## v0.2.1
-- Fixes startup crash caused by an invalid leading character in `index.js`
-- Ingress web UI ("Pairing Wizard") to paste/upload Rust+ credentials JSON
-- Saves persistent state to `/data/state.json`
+## v0.2.2
+- Ingress sidebar pairing wizard
+- Separate noVNC desktop exposed on host port **16080** (container port 6080)
+- "Test connect" button publishes a Rust+ Server device via MQTT Discovery
 
-## What it does today
-- Provides the pairing wizard UI in Home Assistant
-- Stores credentials + device lists
+## How it works (today)
+1. Open the add-on panel (Ingress sidebar)
+2. Click **Open Steam Login Desktop (port 16080)**
+3. Use the desktop to perform the Steam login / pairing workflow (experimental)
+4. Paste/upload the resulting JSON credentials
+5. Click **Test connect & publish** to create the device in Home Assistant (via MQTT Discovery)
 
 ## Next
-- Connect to Rust+ using the saved credentials
-- Publish MQTT Discovery entities
-- Poll state + accept switch commands
+- Robust Rust+ connection loop
+- Auto entity discovery + switches/alarms/cameras publishing

@@ -1,17 +1,22 @@
 name: Rust+ MQTT Bridge
 slug: rustplus_mqtt
-version: "0.2.1"
-description: Expose Rust+ devices to Home Assistant via MQTT Discovery (with pairing wizard UI)
+version: "0.2.2"
+description: Rust+ pairing wizard (Ingress) + optional embedded browser via noVNC (port 16080) + MQTT Discovery
 arch: [amd64, aarch64, armv7]
 startup: services
 boot: auto
 init: false
 
-# Ingress (web UI inside HA sidebar)
 ingress: true
 ingress_port: 8099
 panel_icon: mdi:gamepad-variant
 panel_title: Rust+
+
+# Expose noVNC on a separate host port (requested: 16080)
+ports:
+  6080/tcp: 16080
+ports_description:
+  6080/tcp: "Rust+ Steam Login Desktop (noVNC)"
 
 options:
   mqtt:
