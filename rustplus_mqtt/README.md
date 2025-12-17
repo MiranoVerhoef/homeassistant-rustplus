@@ -1,22 +1,15 @@
 # HomeAssistant Rust+ — Rust+ MQTT Bridge (Add-on)
 
-This repository provides a Home Assistant add-on that bridges Rust+ to Home Assistant using MQTT Discovery.
+## v0.2.1
+- Fixes startup crash caused by an invalid leading character in `index.js`
+- Ingress web UI ("Pairing Wizard") to paste/upload Rust+ credentials JSON
+- Saves persistent state to `/data/state.json`
 
-## v0.2.0
-- Adds Home Assistant Ingress Web UI ("Pairing Wizard")
-- Wizard lets you paste or upload Rust+ credentials JSON
-- Stores persistent state in `/data/state.json`
-
-## Pairing
-Home Assistant cannot run an interactive Steam login like the Rust+ mobile app.
-Instead, use the standard Rust+ bot pairing flow on a PC:
-
-- `npx @liamcottle/rustplus.js fcm-register`
-- `npx @liamcottle/rustplus.js fcm-listen`
-- Pair in-game (Escape → Pairing)
-
-Paste the resulting JSON into the add-on UI.
+## What it does today
+- Provides the pairing wizard UI in Home Assistant
+- Stores credentials + device lists
 
 ## Next
-- Implement Rust+ connection and publish MQTT Discovery entities
-- Poll entity state + handle switch commands
+- Connect to Rust+ using the saved credentials
+- Publish MQTT Discovery entities
+- Poll state + accept switch commands

@@ -1,6 +1,6 @@
 name: Rust+ MQTT Bridge
 slug: rustplus_mqtt
-version: "0.2.0"
+version: "0.2.1"
 description: Expose Rust+ devices to Home Assistant via MQTT Discovery (with pairing wizard UI)
 arch: [amd64, aarch64, armv7]
 startup: services
